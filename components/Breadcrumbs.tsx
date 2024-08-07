@@ -7,7 +7,7 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ path, current }) => {
   return (
-    <ol className="flex items-center whitespace-nowrap px-4 py-3">
+    <ol className="flex items-center whitespace-nowrap px-4 py-3 ms-8">
 
       {path.map((element, index) => (
         <li key={index} className="inline-flex items-center">

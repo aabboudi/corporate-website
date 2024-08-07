@@ -80,11 +80,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="h-96 lg:h-[100px]">
           <iframe src="google_maps_link" width="100%" height="100%" loading="lazy" title="Map location of HQ office." data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom"></iframe>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
