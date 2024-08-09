@@ -2,7 +2,7 @@
 
 This is a showcase website for a corporation using Next.js 14 (App router).
 
-Hosted on Vercel here: [OPM on Vercel](https://opm-project-abboudi.vercel.app/), [alternative link 1](https://opm-abdellah-abboudi.vercel.app/), [alternative link 2](https://opm-git-master-abdellah-abboudi.vercel.app/)
+Hosted on Vercel here: TBD
 
 ## Technologies Used
 
@@ -22,8 +22,8 @@ To use this project as a base for your own, run the following command:
 ### Clone the repository and install the dependencies
 
 ```bash
-git clone https://github.com/aabboudi/corporate-website.git
-cd ./corporate-website/
+git clone https://github.com/aabboudi/nextjs-sqlite3-corporate-website.git
+cd ./nextjs-sqlite3-corporate-website/
 npm install
 ```
 
@@ -48,4 +48,4 @@ npm run studio
 
 ## License
 
-Licensed under the [MIT license](https://github.com/aabboudi/corporate-website/blob/master/LICENSE).
+Licensed under the [MIT license](https://github.com/aabboudi/nextjs-sqlite3-corporate-website/blob/master/LICENSE).
