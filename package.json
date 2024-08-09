@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "makemigrations": "npx drizzle-kit generate --schema drizzle/schema.ts --out drizzle/migrations --dialect sqlite",
-    "migrate": "npx drizzle-kit migrate",
-    "studio": "npx drizzle-kit studio"
+    "migrate": "npx drizzle-kit migrate --config ./drizzle.config.ts",
+    "studio": "npx drizzle-kit studio --config ./drizzle.config.ts"
   },
   "dependencies": {
     "better-sqlite3": "^11.1.2",

@@ -4,16 +4,17 @@ import { Calendar, Book } from "lucide-react";
 
 interface NewsCardProps {
   bg: string;
+  slug: string;
   title: string;
   category: string | undefined;
-  postedAt: string;
-  readTime: string;
+  posted_on: string;
+  read_time?: string;
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ bg, title, category="General", postedAt, readTime }) => {
+const NewsCard: React.FC<NewsCardProps> = ({ bg, slug, title, category="General", posted_on, read_time }) => {
   return (
-    <Link href="/your-target-page" passHref>
-      <article className="relative w-full h-96 rounded-xl shadow mx-auto cursor-pointer group">
+    <Link href={slug} passHref>
+      <article className="relative w-full max-w-[28rem] h-96 rounded-xl shadow mx-auto cursor-pointer group">
         <div className="relative w-full h-full">
           <div className="relative w-full h-full">
             <Image
@@ -27,8 +28,8 @@ const NewsCard: React.FC<NewsCardProps> = ({ bg, title, category="General", post
           </div>
 
           <div className="absolute inset-0 top-0 start-0 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <p className="">
-              {category}
+            <p className="font-semibold">
+              {category.toUpperCase()}
             </p>
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-white">
@@ -36,11 +37,11 @@ const NewsCard: React.FC<NewsCardProps> = ({ bg, title, category="General", post
             <div className="flex gap-4 text-xs mt-1">
               <p className="flex">
                 <Calendar className="me-1" color="white" size={16} />
-                <span>{postedAt}</span>
+                <span>{posted_on}</span>
               </p>
               <p className="flex">
                 <Book className="me-1" color="white" size={16} />
-                <span>{readTime}</span>
+                <span>{read_time}</span>
               </p>
             </div>
           </div>
