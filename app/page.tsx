@@ -5,7 +5,7 @@ import { BrickWall, Cpu, Fingerprint, Fuel, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className="container-fluid">
+    <>
       <section className="min-h-[80vh] w-full flex flex-wrap justify-center lg:justify-start items-center">
         <div className="relative h-screen w-full overflow-hidden">
           <Image
@@ -85,6 +85,6 @@ export default function Home() {
           <iframe src="google_maps_link" width="100%" height="100%" loading="lazy" title="Map location of HQ office." data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom"></iframe>
         </div>
       </section> */}
-    </main>
+    </>
   );
 }

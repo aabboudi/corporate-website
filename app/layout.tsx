@@ -19,9 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} min-h-screen`}>
+      <body className={outfit.className}>
         <Navbar />
-        {children}
+        <main className="container-fluid min-h-screen">
+          {children}
+        </main>
         <Footer />
         <PrelineScript />
       </body>
