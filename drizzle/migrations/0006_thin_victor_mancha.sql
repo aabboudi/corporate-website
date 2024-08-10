@@ -1,0 +1,1 @@
+ALTER TABLE `Articles` ADD `Read Time (min)` integer;

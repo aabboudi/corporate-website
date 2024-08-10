@@ -43,6 +43,13 @@
       "when": 1723251562167,
       "tag": "0005_lowly_sunfire",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1723298267924,
+      "tag": "0006_thin_victor_mancha",
+      "breakpoints": true
     }
   ]
 }

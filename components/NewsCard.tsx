@@ -14,7 +14,7 @@ interface NewsCardProps {
 const NewsCard: React.FC<NewsCardProps> = ({ bg, slug, title, category="General", posted_on, read_time }) => {
   return (
     <Link href={slug} passHref>
-      <article className="relative w-full max-w-[28rem] h-96 rounded-xl shadow mx-auto cursor-pointer group">
+      <article className="relative w-full h-96 rounded-xl shadow mx-auto cursor-pointer group">
         <div className="relative w-full h-full">
           <div className="relative w-full h-full">
             <Image
@@ -24,12 +24,12 @@ const NewsCard: React.FC<NewsCardProps> = ({ bg, slug, title, category="General"
               layout="fill"
               objectFit="cover"
             />
-            <div className="absolute inset-0 bg-black opacity-50 rounded-xl" />
+            <div className="absolute inset-0 bg-black opacity-60 rounded-xl" />
           </div>
 
           <div className="absolute inset-0 top-0 start-0 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <p className="font-semibold">
-              {category.toUpperCase()}
+              {category?.toUpperCase()}
             </p>
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-white">

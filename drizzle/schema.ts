@@ -18,4 +18,5 @@ export const Articles = sqliteTable("Articles", {
     location: text("Location"),
     posted_on: text("Posted On").$type<DateString>(),
     content: text("Content").$type<StringArray>(),
+    read_time: integer("Read Time (min)"),
 });
