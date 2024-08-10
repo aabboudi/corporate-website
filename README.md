@@ -27,11 +27,12 @@ cd ./nextjs-sqlite3-corporate-website/
 npm install
 ```
 
-### Apply migrations
+### Apply migrations then seed the database
 
 ```bash
 npm run makemigrations
 npm run migrate
+npm run seed
 ```
 
 ### Run the development server
