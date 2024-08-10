@@ -29,6 +29,20 @@
       "when": 1723230187324,
       "tag": "0003_gifted_mantis",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1723248987937,
+      "tag": "0004_rapid_magma",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1723251562167,
+      "tag": "0005_lowly_sunfire",
+      "breakpoints": true
     }
   ]
 }

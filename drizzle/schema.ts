@@ -12,7 +12,10 @@ export const Articles = sqliteTable("Articles", {
     id: integer("ID").primaryKey(),
     title: text("Title"),
     slug: text("URL Slug"),
+    image: text("Image URL"),
+    alt_text: text("Credits"),
     category: text("Category"),
-    content: text("Content").$type<StringArray>(),
+    location: text("Location"),
     posted_on: text("Posted On").$type<DateString>(),
+    content: text("Content").$type<StringArray>(),
 });

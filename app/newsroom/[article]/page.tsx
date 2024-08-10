@@ -9,8 +9,6 @@ export default async function Article({ params }: { params: { article: string } 
 
   const [article]:any = await DB.select().from(Articles).where(eq(Articles.slug, params.article));
 
-  console.log(typeof(article.content))
-
   return (
     <div>
       <Breadcrumbs current={article.category} path={[

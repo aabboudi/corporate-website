@@ -9,6 +9,8 @@ export default async function Newsroom() {
   const data:any = await DB.select({
     title: Articles.title,
     slug: Articles.slug,
+    image: Articles.image,
+    alt_text: Articles.alt_text,
     category: Articles.category,
     posted_on: Articles.posted_on,
   }).from(Articles).orderBy(desc(Articles.posted_on));
@@ -23,7 +25,7 @@ export default async function Newsroom() {
         {data.map((article: any, index: number) => (
           <NewsCard
             key={index}
-            bg="/ftproject-bg.webp" // {article.bg}
+            bg={article.image || "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"}
             slug={`/newsroom/${article.slug}`}
             title={article.title}
             category={article.category}
