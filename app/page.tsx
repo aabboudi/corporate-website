@@ -9,11 +9,11 @@ export default function Home() {
       <section className="min-h-[80vh] w-full flex flex-wrap justify-center lg:justify-start items-center">
         <div className="relative h-screen w-full overflow-hidden">
           <Image
+            priority
             src="/spotlight-bg.webp"
             alt="Spotlight Background"
-            layout="fill"
-            objectFit="cover"
-            className="z-[-1]"
+            fill
+            className="z-[-1] object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           <div className="absolute inset-0 flex items-center">

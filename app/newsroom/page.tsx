@@ -26,6 +26,7 @@ export default async function Newsroom() {
         {data.map((article: any, index: number) => (
           <NewsCard
             key={index}
+            index={index}
             bg={article.image || "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"}
             slug={`/newsroom/${article.slug}`}
             title={article.title}
