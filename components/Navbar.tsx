@@ -20,13 +20,13 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-        <div id="hs-navbar-example" className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow lg:block" aria-labelledby="hs-navbar-example-collapse">
+        <div id="hs-navbar-example" className="hidden hs-collapse overflow-hidden transition-all duration-300 grow lg:block" aria-labelledby="hs-navbar-example-collapse">
           <div className="flex flex-col text-center gap-5 lg:gap-12 lg:flex-row lg:items-center lg:justify-end mt-5 lg:mt-0 lg:ps-5">
-            <a href="#" className="font-semibold text-blue-500 focus:outline-none" aria-current="page">About</a>
-            <a href="/newsroom" className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Newsroom</a>
-            <a href="#" className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Capabilities</a>
-            <a href="#" className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Openings</a>
-            <a href="#" className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Contact</a>
+            <a href="#"               className="font-semibold text-blue-500 focus:outline-none" aria-current="page">About</a>
+            <a href="/newsroom"       className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Newsroom</a>
+            <a href="/capabilities"   className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Capabilities</a>
+            <a href="/careers"        className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Careers</a>
+            <a href="/contact"        className="font-semibold text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500">Contact</a>
           </div>
         </div>
       </nav>
