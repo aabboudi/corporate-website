@@ -41,6 +41,7 @@ export default function Home() {
       <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:px-36">
         <div className="lg:col-span-2 h-72 md:min-h-48 rounded-xl shadow overflow-hidden">
           <Image
+            priority={false}
             src="/ftproject-bg.webp"
             alt="Test"
             width={1000}
@@ -67,6 +68,7 @@ export default function Home() {
       <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:px-36">
         <div className="lg:col-span-2 order-1 lg:order-2 h-72 md:min-h-48 rounded-xl shadow overflow-hidden">
           <Image
+            priority={false}
             src="/ftproject-bg.webp"
             alt="Test"
             width={1000}
