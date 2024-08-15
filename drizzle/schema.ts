@@ -20,3 +20,16 @@ export const Articles = sqliteTable("Articles", {
     content: text("Content").$type<StringArray>(),
     read_time: integer("Read Time (min)"),
 });
+
+export const Jobs = sqliteTable("Jobs", {
+    id: integer("ID").primaryKey(),
+    job: text("Job"),
+    location: text("Location"),
+    type: text("Type"),
+    timezone: text("Timezone"),
+    published: text("Published").$type<DateString>(),
+    description: text("Description"),
+    level: text("Level"),
+    clearance_required: integer("Clearance Required"),
+    is_urgent: integer("Is Urgent"),
+});
