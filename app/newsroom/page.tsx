@@ -1,4 +1,5 @@
-import Breadcrumbs from "@/components/Breadcrumbs";
+// import Breadcrumbs from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/breadcrumbs-builder";
 import NewsCard from "@/components/NewsCard";
 import { DB } from "@/drizzle/setup";
 import { Articles } from "@/drizzle/schema";
@@ -18,7 +19,7 @@ export default async function Newsroom() {
 
   return (
     <main>
-      <Breadcrumbs current="Newsroom" path={[{label: "Home", slug:"/"},]} />
+      <Breadcrumbs current="Newsroom" path={[{ href:"/", label: "Home" },]} />
 
       <h1 className="text-3xl font-bold text-center">Newsroom</h1>
 
