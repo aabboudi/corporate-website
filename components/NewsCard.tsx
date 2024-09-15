@@ -15,18 +15,18 @@ interface NewsCardProps {
 const NewsCard: React.FC<NewsCardProps> = ({ index, bg, slug, title, category="General", posted_on, read_time }) => {
   return (
     <a href={slug}>
-      <article className="relative w-full h-96 rounded-xl shadow mx-auto cursor-pointer group">
+      <article className="relative w-full h-96 rounded-md shadow mx-auto cursor-pointer group">
         <div className="relative w-full h-full">
           <div className="relative w-full h-full">
             <Image
               priority={index < 4}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover rounded-xl"
+              className="object-cover rounded-md"
               src={bg}
               alt="Card Image"
             />
-            <div className="absolute inset-0 bg-black opacity-60 rounded-xl" />
+            <div className="absolute inset-0 bg-black opacity-60 rounded-md" />
           </div>
 
           <div className="absolute inset-0 top-0 start-0 text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

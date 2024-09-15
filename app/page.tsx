@@ -3,9 +3,18 @@ import Image from "next/image";
 
 import { BrickWall, Cpu, Fingerprint, Fuel, Shield } from 'lucide-react';
 
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, BarChart, Users, Zap } from "lucide-react"
+
+import { GlobeHero } from "@/components/globe-hero";
+
 export default function Home() {
   return (
     <>
+      <section className="min-h-screen max-w-7xl mx-auto">
+        <GlobeHero />
+      </section>
       <section className="min-h-[80vh] w-full flex flex-wrap justify-center lg:justify-start items-center">
         <div className="relative h-screen w-full overflow-hidden">
           <Image
@@ -27,15 +36,30 @@ export default function Home() {
 
       </section>
 
-      <section className="flex flex-wrap min-h-96 justify-center text-center text-black topography-svg-bg">
+      <section className="flex flex-wrap min-h-96 justify-center text-center topography-svg-bg">
         <div className="w-full flex justify-center items-center">
           <h2 className="text-5xl text-center font-bold my-4">Capabilities</h2>
         </div>
-        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4"><BrickWall className="mx-auto" color="black" size={48} />Construction</div>
-        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4"><Fuel className="mx-auto" color="black" size={48} />Bulk Fuel Services</div>
-        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4"><Shield className="mx-auto" color="black" size={48} />Base Ops Support</div>
-        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4"><Fingerprint className="mx-auto" color="black" size={48} />Security & Protection</div>
-        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4"><Cpu className="mx-auto" color="black" size={48} />Cyber & IT</div>
+        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4">
+          <BrickWall className="mx-auto" color="currentColor" size={48} />
+          Construction
+        </div>
+        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4">
+          <Fuel className="mx-auto" color="currentColor" size={48} />
+          Bulk Fuel Services
+        </div>
+        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4">
+          <Shield className="mx-auto" color="currentColor" size={48} />
+          Base Ops Support
+        </div>
+        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4">
+          <Fingerprint className="mx-auto" color="currentColor" size={48} />
+          Security & Protection
+        </div>
+        <div className="w-full md:w-1/3 lg:w-1/5 text-lg font-semibold my-4">
+          <Cpu className="mx-auto" color="currentColor" size={48} />
+          Cyber & IT
+        </div>
       </section>
 
       <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:px-36">

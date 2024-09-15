@@ -1,9 +1,10 @@
+import { ThemeProvider } from "@/components/theme-provider"
+
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import PrelineScript from "@/components/PrelineScript";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -19,13 +20,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
-        <Navbar />
-        <main className="container-fluid min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <PrelineScript />
+      <body className={`${outfit.className} overflow-x-hidden`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="container-fluid min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
