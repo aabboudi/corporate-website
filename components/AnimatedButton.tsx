@@ -8,7 +8,7 @@ interface AnimatedButtonProps {
 
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({ variant = 'light', children }) => {
   const isLight = variant === 'light';
-  const baseClasses = 'relative overflow-hidden border-2 transition-colors duration-500 px-3 py-2 rounded-xl';
+  const baseClasses = 'relative overflow-hidden border-2 transition-colors duration-500 px-3 py-2 rounded-md';
   const lightClasses = 'text-primary border-primary';
   const darkClasses = 'bg-primary text-white border-primary';
 
