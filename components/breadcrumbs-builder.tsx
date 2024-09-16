@@ -16,7 +16,7 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ current, path }: BreadcrumbsProps) {
   return (
-    <Breadcrumb className="px-12 xl:px-24 py-3">
+    <Breadcrumb className="max-w-8xl mx-auto px-8 py-4">
       <BreadcrumbList>
         {path.map((item, index) => (
           <React.Fragment key={index}>

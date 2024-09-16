@@ -35,7 +35,7 @@ export default function Footer() {
           <h2 className="mb-6 text-sm font-semibold uppercase">Help center</h2>
           <ul className="text-sm">
             <li className="mb-4">
-              <Link href="/discord" className="hover:underline">Discord Server</Link>
+              <Link href="/frequently-asked-questions" className="hover:underline">FAQ</Link>
             </li>
             <li className="mb-4">
               <Link href="/twitter" className="hover:underline">Twitter</Link>

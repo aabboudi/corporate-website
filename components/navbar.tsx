@@ -13,13 +13,14 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
+import { ThemeSwitch } from "./theme-switch"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
-    <nav className="sticky top-0 bg-background z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 bg-background dark:bg-[#0c2545] shadow-lg z-50">
+      <div className="max-w-8xl mx-auto px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
             <svg
@@ -94,6 +95,7 @@ export default function Navbar() {
             <Button asChild className="w-full">
               <Link href={siteConfig.callToAction.href}>{siteConfig.callToAction.label}</Link>
             </Button>
+            <ThemeSwitch />
           </div>
         </div>
       </div>

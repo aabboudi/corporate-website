@@ -1,7 +1,7 @@
 import { DB } from "@/drizzle/setup";
 import { Articles } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/breadcrumbs-builder";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
 
@@ -12,8 +12,8 @@ export default async function Article({ params }: { params: { article: string } 
   return (
     <div>
       <Breadcrumbs current={article.category} path={[
-        { label: "Home", slug: "/" },
-        { label: "Newsroom", slug: "/newsroom" },
+        { label: "Home", href: "/" },
+        { label: "Newsroom", href: "/newsroom" },
       ]} />
 
       <article className="grid lg:grid-cols-5 gap-12 py-12 px-8 lg:px-12">
@@ -44,7 +44,7 @@ export default async function Article({ params }: { params: { article: string } 
         </section>
         <section className="lg:col-span-2">
           <Image
-            src="/ftproject-bg.webp"
+            src={article.image}
             alt="Test"
             width={1000}
             height={1000}
