@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { get_all_articles } from "../lib/getAllArticles";
+import { get_all_articles } from "../lib/fetch";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const BASE_URL = 'https://xyz.com';

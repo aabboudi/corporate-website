@@ -33,3 +33,10 @@ export const Jobs = sqliteTable("Jobs", {
     clearance_required: integer("Clearance Required"),
     is_urgent: integer("Is Urgent"),
 });
+
+export const FAQs = sqliteTable("FAQs", {
+    id: integer("ID").primaryKey(),
+    question: text("Question"),
+    answer: text("Answer"),
+    keywords: text("Keywords").$type<StringArray>(),
+});
