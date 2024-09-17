@@ -12,8 +12,6 @@ export default function RootLayout({
 }>) {
   return (
     // <div className="p-12">
-    <div className="">
-      {children}
-    </div>
+    <div className="">{children}</div>
   );
 }

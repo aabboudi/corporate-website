@@ -1,39 +1,14 @@
-import AnimatedButton from "@/components/AnimatedButton";
 import Image from "next/image";
+import { BrickWall, Cpu, Fingerprint, Fuel, Shield } from "lucide-react";
 
-import { BrickWall, Cpu, Fingerprint, Fuel, Shield } from 'lucide-react';
-
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, BarChart, Users, Zap } from "lucide-react"
-
+import AnimatedButton from "@/components/AnimatedButton";
 import { GlobeHero } from "@/components/globe-hero";
 
 export default function Home() {
   return (
     <>
-      <section className="min-h-screen max-w-7xl mx-auto">
+      <section className="min-h-screen max-w-8xl mx-auto px-8">
         <GlobeHero />
-      </section>
-      <section className="min-h-[80vh] w-full flex flex-wrap justify-center lg:justify-start items-center">
-        <div className="relative h-screen w-full overflow-hidden">
-          <Image
-            priority
-            src="/spotlight-bg.webp"
-            alt="Spotlight Background"
-            fill
-            className="z-[-1] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full lg:w-1/2 text-center lg:text-start text-white lg:ms-12">
-              <h1 className="text-3xl md:text-6xl font-bold mb-2">Landing Page Title:<br />Rest of Title</h1>
-              <p className="text-xl mb-2">JAN. 01, 2024</p>
-              <AnimatedButton variant="light">Learn More</AnimatedButton>
-            </div>
-          </div>
-        </div>
-
       </section>
 
       <section className="flex flex-wrap min-h-96 justify-center text-center topography-svg-bg">
@@ -62,49 +37,115 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:px-36">
+      <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:p-36">
         <div className="lg:col-span-2 h-72 md:min-h-48 rounded-xl shadow overflow-hidden">
           <Image
+            alt="Test"
+            height={1000}
             priority={false}
             src="/ftproject-bg.webp"
-            alt="Test"
             width={1000}
-            height={1000}
-          // layout="fill"
-          // objectFit="cover"
+            // layout="fill"
+            // objectFit="cover"
           />
         </div>
         <div className="lg:col-span-3">
-          <h2 className="text-5xl text-center lg:text-start font-bold mb-4">Featured Past Performance</h2>
-          <p className="md:text-justify mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea laboriosam alias exercitationem neque impedit culpa vel non sequi molestiae tempore, perspiciatis, amet reiciendis quibusdam ut voluptas, odit harum accusamus fugit laudantium soluta dolorum incidunt sit optio. Architecto, dignissimos. Ipsum, veniam quisquam. Explicabo ipsa minus dolor fuga quia quasi laboriosam quibusdam!</p>
-          <p className="md:text-justify mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum ratione modi aut tempore distinctio quibusdam ducimus minus temporibus perspiciatis quam saepe commodi ut vitae autem quos exercitationem libero harum, porro labore! Iste non perferendis dolorem quia animi adipisci labore totam earum. Tenetur, nihil natus.</p>
+          <h2 className="text-5xl text-center lg:text-start font-bold mb-4">
+            Featured Past Performance
+          </h2>
+          <p className="md:text-justify mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+            laboriosam alias exercitationem neque impedit culpa vel non sequi
+            molestiae tempore, perspiciatis, amet reiciendis quibusdam ut
+            voluptas, odit harum accusamus fugit laudantium soluta dolorum
+            incidunt sit optio. Architecto, dignissimos. Ipsum, veniam quisquam.
+            Explicabo ipsa minus dolor fuga quia quasi laboriosam quibusdam!
+          </p>
+          <p className="md:text-justify mb-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
+            ratione modi aut tempore distinctio quibusdam ducimus minus
+            temporibus perspiciatis quam saepe commodi ut vitae autem quos
+            exercitationem libero harum, porro labore! Iste non perferendis
+            dolorem quia animi adipisci labore totam earum. Tenetur, nihil
+            natus.
+          </p>
           <AnimatedButton variant="light">Learn More</AnimatedButton>
         </div>
       </section>
 
-      <section className="flex flex-wrap justify-center topography-svg-bg p-4">
-        <div className="w-full text-4xl text-center font-bold my-4">Corporate in Numbers</div>
-        <div className="w-full lg:w-1/3 text-center">test</div>
-        <div className="w-full lg:w-1/3 text-center">test</div>
-        <div className="w-full lg:w-1/3 text-center">test</div>
+      <section className="topography-svg-bg px-4 py-10 sm:px-6 lg:px-16 lg:py-14 mx-auto">
+        <div className="w-full text-4xl text-center font-bold my-4">
+          Corporate in Numbers
+        </div>
+        <div className="grid gap-6 grid-cols-1 sm:gap-12 lg:grid-cols-3 lg:gap-8">
+          <div>
+            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">
+              Accuracy rate
+            </h4>
+            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">
+              99.95%
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              in fulfilling orders
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">
+              Startup businesses
+            </h4>
+            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">
+              2,000+
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              partner with Preline
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">
+              Happy customer
+            </h4>
+            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">
+              85%
+            </p>
+            <p className="mt-1 text-gray-500 dark:text-neutral-500">
+              this year alone
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:px-36">
+      <section className="grid lg:grid-cols-5 justify-between gap-12 p-12 lg:p-36">
         <div className="lg:col-span-2 order-1 lg:order-2 h-72 md:min-h-48 rounded-xl shadow overflow-hidden">
           <Image
+            alt="Test"
+            height={1000}
             priority={false}
             src="/ftproject-bg.webp"
-            alt="Test"
             width={1000}
-            height={1000}
-          // layout="fill"
-          // objectFit="cover"
+            // layout="fill"
+            // objectFit="cover"
           />
         </div>
         <div className="lg:col-span-3 order-2 lg:order-1">
-          <h2 className="text-5xl text-center lg:text-start font-bold mb-4">Equal Employment Opportunity</h2>
-          <p className="md:text-justify mb-4">Corporate is committed to providing equal employment opportunities to all qualified individuals without regard to race, color, religion, sex, national origin, age, disability, sexual orientation, gender identity, or any other characteristic protected by applicable laws. This policy applies to all aspects of employment, including but not limited to recruitment, hiring, promotions, transfers, termination, and employee benefits.</p>
-          <p className="md:text-justify mb-4">Read more to understand how Corporate adheres to state, national, and international standards to ensure it offers an equal employment opportunity to all candidates</p>
+          <h2 className="text-5xl text-center lg:text-start font-bold mb-4">
+            Equal Employment Opportunity
+          </h2>
+          <p className="md:text-justify mb-4">
+            Corporate is committed to providing equal employment opportunities
+            to all qualified individuals without regard to race, color,
+            religion, sex, national origin, age, disability, sexual orientation,
+            gender identity, or any other characteristic protected by applicable
+            laws. This policy applies to all aspects of employment, including
+            but not limited to recruitment, hiring, promotions, transfers,
+            termination, and employee benefits.
+          </p>
+          <p className="md:text-justify mb-4">
+            Read more to understand how Corporate adheres to state, national,
+            and international standards to ensure it offers an equal employment
+            opportunity to all candidates
+          </p>
           <AnimatedButton variant="light">Learn More</AnimatedButton>
         </div>
       </section>

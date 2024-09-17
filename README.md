@@ -9,9 +9,8 @@ Hosted on Vercel here: TBD
 - [Next.js 14](https://nextjs.org/docs/getting-started)
 - [TypeScript](https://www.typescriptlang.org)
 - [Drizzle ORM](https://orm.drizzle.team/)
-- [Drizzle Kit](https://orm.drizzle.team/kit-docs/overview)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Preline UI](https://preline.co/)
+- [Shadcn/UI](https://ui.shadcn.com/)
 - [Open Graph](https://ogp.me/)
 - [Vercel](https://vercel.com/)
 
@@ -22,8 +21,8 @@ To use this project as a base for your own, run the following command:
 ### Clone the repository and install the dependencies
 
 ```bash
-git clone https://github.com/aabboudi/nextjs-sqlite3-corporate-website.git
-cd ./nextjs-sqlite3-corporate-website/
+git clone https://github.com/aabboudi/nextjs-drizzle-sqlite-website.git
+cd ./nextjs-drizzle-sqlite-website/
 npm install
 ```
 
