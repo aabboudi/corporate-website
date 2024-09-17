@@ -5,7 +5,7 @@ export const siteConfig = {
   description: "Placeholder.",
   callToAction: {
     label: "We're Hiring!",
-    href: "/careers"
+    href: "/openings",
   },
   navItems: [
     {

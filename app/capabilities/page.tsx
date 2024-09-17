@@ -1,5 +1,3 @@
 export default function Capabilities() {
-  return (
-    <h1>Capabs</h1>
-  )
+  return <h1>Capabs</h1>;
 }

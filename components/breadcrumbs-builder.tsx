@@ -11,7 +11,7 @@ import {
 
 interface BreadcrumbsProps {
   current: string;
-  path: { href: string, label: string }[];
+  path: { href: string; label: string }[];
 }
 
 export function Breadcrumbs({ current, path }: BreadcrumbsProps) {
@@ -21,9 +21,7 @@ export function Breadcrumbs({ current, path }: BreadcrumbsProps) {
         {path.map((item, index) => (
           <React.Fragment key={index}>
             <BreadcrumbItem>
-              <BreadcrumbLink href={item.href}>
-                {item.label}
-              </BreadcrumbLink>
+              <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
           </React.Fragment>

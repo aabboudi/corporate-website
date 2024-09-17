@@ -1,16 +1,24 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 
 interface AnimatedButtonProps {
-  variant?: 'light' | 'dark';
+  variant?: "light" | "dark";
   children: React.ReactNode;
 }
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({ variant = 'light', children }) => {
-  const isLight = variant === 'light';
-  const baseClasses = 'relative overflow-hidden border-2 transition-colors duration-500 px-3 py-2 rounded-md';
-  const lightClasses = 'text-primary border-primary';
-  const darkClasses = 'bg-primary text-white border-primary';
+const AnimatedButton: React.FC<AnimatedButtonProps> = ({
+  variant = "light",
+  children,
+}) => {
+  const isLight = variant === "light";
+  const baseClasses =
+    "relative overflow-hidden border-2 transition-colors duration-500 px-3 py-2 rounded-md";
+  const lightClasses = "text-primary border-primary";
+  const darkClasses = "bg-primary text-white border-primary";
+
+  {
+    /* eslint-disable react/no-unknown-property */
+  }
 
   return (
     <button
@@ -19,9 +27,9 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ variant = 'light', chil
       <span className="relative z-10">{children}</span>
       <div
         className={`absolute w-[300px] h-[200px] rounded-full transition-all duration-500 top-full left-full ${
-          isLight ? 'bg-white' : 'bg-primary'
+          isLight ? "bg-white" : "bg-primary"
         }`}
-      ></div>
+      />
       <style jsx>{`
         button:hover div,
         button:focus div {
@@ -31,11 +39,14 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ variant = 'light', chil
 
         button:hover,
         button:focus {
-          color: ${isLight ? '#000' : '#fff'} !important;
+          color: ${isLight ? "#000" : "#fff"} !important;
         }
       `}</style>
     </button>
   );
+  {
+    /* eslint-enable react/no-unknown-property */
+  }
 };
 
 export default AnimatedButton;

@@ -1,8 +1,13 @@
+const fs = require("fs").promises;
+
 const { DB } = require("../setup.ts");
 const { Articles, FAQs } = require("../schema.ts");
-const fs = require('fs').promises;
 
-async function seedData(data: any[], table: any, dataType: string): Promise<void> {
+async function seedData(
+  data: any[],
+  table: any,
+  dataType: string,
+): Promise<void> {
   try {
     await DB.insert(table).values(data);
     console.log(`✓ Database seeded successfully with ${dataType}.`);
@@ -15,23 +20,29 @@ async function seedDatabase() {
   try {
     console.log("Seeding database...\n");
     // Extract
-    const fileData = JSON.parse(await fs.readFile('drizzle/seed/seedData.json', 'utf-8'));
+    const fileData = JSON.parse(
+      await fs.readFile("drizzle/seed/seedData.json", "utf-8"),
+    );
     const articlesData = fileData.articles;
     const faqsData = fileData.faqs;
 
     // Prepare
-    await Promise.all(articlesData.map(async (article: any) => {
-      article.content = JSON.stringify(article.content);
-      article.read_time = calculateReadTime(article.content);
-    }));
+    await Promise.all(
+      articlesData.map(async (article: any) => {
+        article.content = JSON.stringify(article.content);
+        article.read_time = calculateReadTime(article.content);
+      }),
+    );
 
-    await Promise.all(faqsData.map(async (faq: any) => {
-      faq.keywords = JSON.stringify(faq.keywords);
-    }));
+    await Promise.all(
+      faqsData.map(async (faq: any) => {
+        faq.keywords = JSON.stringify(faq.keywords);
+      }),
+    );
 
     // Seed
-    await seedData(articlesData, Articles, 'Articles');
-    await seedData(faqsData, FAQs, 'FAQs');
+    await seedData(articlesData, Articles, "Articles");
+    await seedData(faqsData, FAQs, "FAQs");
   } catch (error) {
     console.error("⨯ Error seeding the database: ", error);
     process.exit(1);
@@ -44,8 +55,9 @@ async function seedDatabase() {
 
 function calculateReadTime(text: string): number {
   const WORDS_PER_MINUTE = 200;
-  const cleanedText = text.replace(/\n/g, ' ');
+  const cleanedText = text.replace(/\n/g, " ");
   const wordCount = cleanedText.trim().split(/\s+/).length;
+
   return Math.ceil(wordCount / WORDS_PER_MINUTE);
 }
 

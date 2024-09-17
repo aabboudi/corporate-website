@@ -1,13 +1,13 @@
 // import Breadcrumbs from "@/components/Breadcrumbs";
+import { desc } from "drizzle-orm";
+
 import { Breadcrumbs } from "@/components/breadcrumbs-builder";
 import NewsCard from "@/components/NewsCard";
 import { DB } from "@/drizzle/setup";
 import { Articles } from "@/drizzle/schema";
-import { desc } from "drizzle-orm";
 
 export default async function Newsroom() {
-
-  const data:any = await DB.select({
+  const data: any = await DB.select({
     title: Articles.title,
     slug: Articles.slug,
     image: Articles.image,
@@ -15,11 +15,13 @@ export default async function Newsroom() {
     category: Articles.category,
     posted_on: Articles.posted_on,
     read_time: Articles.read_time,
-  }).from(Articles).orderBy(desc(Articles.posted_on));
+  })
+    .from(Articles)
+    .orderBy(desc(Articles.posted_on));
 
   return (
     <main>
-      <Breadcrumbs current="Newsroom" path={[{ href:"/", label: "Home" },]} />
+      <Breadcrumbs current="Newsroom" path={[{ href: "/", label: "Home" }]} />
 
       <h1 className="text-3xl font-bold text-center">Newsroom</h1>
 
@@ -27,17 +29,19 @@ export default async function Newsroom() {
         {data.map((article: any, index: number) => (
           <NewsCard
             key={index}
-            index={index}
-            bg={article.image || "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"}
-            slug={`/newsroom/${article.slug}`}
-            title={article.title}
+            bg={
+              article.image ||
+              "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg"
+            }
             category={article.category}
+            index={index}
             posted_on={new Date(article.posted_on).toDateString().slice(4)}
             read_time={`${article.read_time} min`}
+            slug={`/newsroom/${article.slug}`}
+            title={article.title}
           />
         ))}
       </section>
-
     </main>
-  )
+  );
 }

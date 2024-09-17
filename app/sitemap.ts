@@ -1,15 +1,14 @@
 import { MetadataRoute } from "next";
+
 import { get_all_articles } from "../lib/fetch";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const BASE_URL = 'https://xyz.com';
+  const BASE_URL = "https://xyz.com";
   const response = await get_all_articles();
-  const article_slugs = response?.map((article: any) => (
-    {
-      url: `${BASE_URL}/newsroom/${article?.slug}`,
-      lastModified: new Date(article?.posted_on),
-    }
-  ));
+  const article_slugs = response?.map((article: any) => ({
+    url: `${BASE_URL}/newsroom/${article?.slug}`,
+    lastModified: new Date(article?.posted_on),
+  }));
 
   return [
     {
@@ -21,6 +20,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     ...article_slugs,
-
-  ]
+  ];
 }

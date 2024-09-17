@@ -2,12 +2,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 
-const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
-  ssr: false,
-});
+import { Button } from "./ui/button";
+
+const World = dynamic(
+  () => import("@/components/ui/globe").then((m) => m.World),
+  {
+    ssr: false,
+  },
+);
 
 export function GlobeHero() {
   const globeConfig = {
@@ -404,34 +408,41 @@ export function GlobeHero() {
           <span className="block">Succeed.</span>
         </h1>
         <p className="max-w-[600px] md:text-xl">
-          Empower your business with cutting-edge solutions that drive growth and efficiency in the digital age.
+          Empower your business with cutting-edge solutions that drive growth
+          and efficiency in the digital age.
         </p>
         <div className="flex flex-col gap-2 min-[400px]:flex-row">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            size="lg"
+          >
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-secondary">
+          <Button
+            className="border-primary text-primary hover:bg-primary hover:text-secondary"
+            size="lg"
+            variant="outline"
+          >
             Learn More
           </Button>
         </div>
       </div>
       <div className="flex-1 max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
           animate={{
             opacity: 1,
             y: 0,
           }}
+          className="div"
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
           transition={{
             duration: 1,
           }}
-          className="div"
-        >
-        </motion.div>
+        />
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />

@@ -1,14 +1,15 @@
-"use server"
+"use server";
+
+import { desc } from "drizzle-orm";
 
 import { DB } from "@/drizzle/setup";
 import { Articles, FAQs } from "@/drizzle/schema";
-import { desc } from "drizzle-orm";
 
 export type FAQItem = {
-  question: string,
-  answer: string,
-  keywords: string[],
-}
+  question: string;
+  answer: string;
+  keywords: string[];
+};
 
 export async function get_all_articles() {
   const articles: any = await DB.select({
@@ -20,16 +21,18 @@ export async function get_all_articles() {
 }
 
 export async function get_all_faqs() {
-  let faqData = await DB.select({
+  let faqData = (await DB.select({
     question: FAQs.question,
     answer: FAQs.answer,
     keywords: FAQs.keywords,
-  }).from(FAQs).orderBy(desc(FAQs.question)) as FAQItem[];
+  })
+    .from(FAQs)
+    .orderBy(desc(FAQs.question))) as FAQItem[];
 
-  faqData = faqData.map(faq => ({
-  ...faq,
-  keywords: JSON.parse(faq.keywords.toString())
-  }))
+  faqData = faqData.map((faq) => ({
+    ...faq,
+    keywords: JSON.parse(faq.keywords.toString()),
+  }));
 
   return faqData;
 }
