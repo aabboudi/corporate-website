@@ -1,22 +1,78 @@
 {
-  "version": "6",
-  "dialect": "sqlite",
-  "id": "056f99e8-d02f-4afc-881e-2efcfca93826",
+  "version": "5",
+  "dialect": "mysql",
+  "id": "3191dff7-16e0-4785-9fe0-e32692f77dd6",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "Articles": {
       "name": "Articles",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "integer",
-          "primaryKey": true,
+        "ID": {
+          "name": "ID",
+          "type": "serial",
+          "primaryKey": false,
           "notNull": true,
+          "autoincrement": true
+        },
+        "Title": {
+          "name": "Title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
           "autoincrement": false
         },
-        "title": {
-          "name": "title",
-          "type": "text",
+        "Slug": {
+          "name": "Slug",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Image URL": {
+          "name": "Image URL",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Credits": {
+          "name": "Credits",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Category": {
+          "name": "Category",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Location": {
+          "name": "Location",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Published On": {
+          "name": "Published On",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Content": {
+          "name": "Content",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Read Time (min)": {
+          "name": "Read Time (min)",
+          "type": "tinyint",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
@@ -24,17 +80,148 @@
       },
       "indexes": {},
       "foreignKeys": {},
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "Articles_ID": {
+          "name": "Articles_ID",
+          "columns": [
+            "ID"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "FAQs": {
+      "name": "FAQs",
+      "columns": {
+        "ID": {
+          "name": "ID",
+          "type": "serial",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "Question": {
+          "name": "Question",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Answer": {
+          "name": "Answer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Keywords": {
+          "name": "Keywords",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "FAQs_ID": {
+          "name": "FAQs_ID",
+          "columns": [
+            "ID"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "Openings": {
+      "name": "Openings",
+      "columns": {
+        "ID": {
+          "name": "ID",
+          "type": "serial",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "Title": {
+          "name": "Title",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Location": {
+          "name": "Location",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Type": {
+          "name": "Type",
+          "type": "enum('Full-time','Part-time','Remote','Contract','Internship')",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Timezone": {
+          "name": "Timezone",
+          "type": "enum('UTC')",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Published On": {
+          "name": "Published On",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "'2024-09-18'"
+        },
+        "Description": {
+          "name": "Description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Clearance Required": {
+          "name": "Clearance Required",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Is Urgent": {
+          "name": "Is Urgent",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "Openings_ID": {
+          "name": "Openings_ID",
+          "columns": [
+            "ID"
+          ]
+        }
+      },
       "uniqueConstraints": {}
     }
   },
-  "enums": {},
   "_meta": {
     "schemas": {},
     "tables": {},
     "columns": {}
   },
   "internal": {
+    "tables": {},
     "indexes": {}
   }
 }

@@ -1,9 +1,11 @@
+import { slugify } from "@/lib/utils";
+
 const fs = require("fs").promises;
 
 const { DB } = require("../setup.ts");
-const { Articles, FAQs } = require("../schema.ts");
+const { Articles, FAQs, Openings } = require("../schema.ts");
 
-async function seedData(
+async function seedTable(
   data: any[],
   table: any,
   dataType: string,
@@ -25,31 +27,28 @@ async function seedDatabase() {
     );
     const articlesData = fileData.articles;
     const faqsData = fileData.faqs;
+    const openingsData = fileData.openings;
 
     // Prepare
     await Promise.all(
       articlesData.map(async (article: any) => {
-        article.content = JSON.stringify(article.content);
-        article.read_time = calculateReadTime(article.content);
-      }),
-    );
-
-    await Promise.all(
-      faqsData.map(async (faq: any) => {
-        faq.keywords = JSON.stringify(faq.keywords);
+        article.slug = slugify(article.title);
+        article.read_time = calculateReadTime(JSON.stringify(article.content));
       }),
     );
 
     // Seed
-    await seedData(articlesData, Articles, "Articles");
-    await seedData(faqsData, FAQs, "FAQs");
+    await seedTable(articlesData, Articles, "Articles");
+    await seedTable(faqsData, FAQs, "FAQs");
+    await seedTable(openingsData, Openings, "Openings");
   } catch (error) {
-    console.error("⨯ Error seeding the database: ", error);
+    console.error("\n⨯ Error seeding the database: ", error);
+    console.log("Exiting with status code: 1");
     process.exit(1);
   } finally {
-    console.log("---------------------");
-    console.log("Seed script finished.");
-    console.log("---------------------");
+    console.log("\nSeed script finished");
+    console.log("Exiting with status code: 0");
+    process.exit(0);
   }
 }
 
@@ -62,41 +61,3 @@ function calculateReadTime(text: string): number {
 }
 
 seedDatabase();
-
-// async function seedDatabase() {
-//   try {
-//     const fileData = JSON.parse(await fs.readFileSync('drizzle/seed/articles.json', 'utf-8'));
-//     await seedArticles(fileData.articles);
-//     await seedFAQs(fileData.faqs);
-//   } catch (error) {
-//     console.error("⨯ Error seeding the database: ", error);
-//   }
-// }
-
-// seedDatabase().catch(err => {
-//   console.error("⨯ Unhandled error during seeding (FAQs):", err);
-//   process.exit(1);
-// })
-
-// async function seedArticles(articlesData: any) {
-//   try {
-//     await Promise.all(articlesData.map(async (article: any) => {
-//       article.content = JSON.stringify(article.content);
-//       article.read_time = calculateReadTime(article.content);
-//     }));
-
-//     await DB.insert(Articles).values(articlesData);
-//     console.log("✓ Database seeded successfully with articles.");
-//   } catch (error) {
-//     console.error("⨯ Error seeding the database with articles: ", error);
-//   }
-// }
-
-// async function seedFAQs(faqData: any) {
-//   try {
-//     await DB.insert(FAQs).values(faqData);
-//     console.log("✓ Database seeded successfully with FAQ.");
-//   } catch (error) {
-//     console.error("⨯ Error seeding the database with FAQ data: ", error);
-//   }
-// }
