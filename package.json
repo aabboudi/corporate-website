@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
+    "lint": "next lint",
     "makemigrations": "npx drizzle-kit generate --schema drizzle/schema.ts --out drizzle/migrations --dialect mysql",
     "migrate": "npx drizzle-kit migrate --config drizzle.config.ts",
     "seed": "npx tsx drizzle/seed/seed.ts",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",
     "@types/node": "^20.16.5",
-    "@types/react": "^18.3.5",
+    "@types/react": "^18.3.7",
     "@types/react-dom": "^18.3.0",
     "drizzle-kit": "^0.23.2",
     "eslint": "^8",
