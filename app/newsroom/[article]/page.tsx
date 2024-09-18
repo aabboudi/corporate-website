@@ -6,7 +6,7 @@ import { DB } from "@/drizzle/setup";
 import { Articles } from "@/drizzle/schema";
 import { Breadcrumbs } from "@/components/breadcrumbs-builder";
 
-export default async function Article({
+export default async function NewsArticle({
   params,
 }: {
   params: { article: string };
@@ -33,7 +33,7 @@ export default async function Article({
           <div className="flex gap-4">
             <div className="flex gap-1">
               <Calendar className="mt-1" color="currentColor" size={16} />
-              {new Date(article.posted_on).toDateString().slice(4)}
+              {new Date(article.published).toDateString().slice(4)}
             </div>
             <div className="flex gap-1">
               <MapPin className="mt-1" color="currentColor" size={16} />

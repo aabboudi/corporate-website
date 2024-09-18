@@ -2,7 +2,7 @@ import Image from "next/image";
 import { BrickWall, Cpu, Fingerprint, Fuel, Shield } from "lucide-react";
 
 import AnimatedButton from "@/components/AnimatedButton";
-import { GlobeHero } from "@/components/globe-hero";
+import { GlobeHero } from "@/components/partials/globe-hero";
 
 export default function Home() {
   return (

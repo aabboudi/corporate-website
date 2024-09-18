@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const World = dynamic(
   () => import("@/components/ui/globe").then((m) => m.World),

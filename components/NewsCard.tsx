@@ -6,8 +6,8 @@ interface NewsCardProps {
   bg: string;
   slug: string;
   title: string;
-  category: string | undefined;
-  posted_on: string;
+  category: string | null;
+  published: string;
   read_time?: string;
 }
 
@@ -17,7 +17,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
   slug,
   title,
   category = "General",
-  posted_on,
+  published,
   read_time,
 }) => {
   return (
@@ -44,7 +44,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
             <div className="flex gap-4 text-xs mt-1">
               <p className="flex">
                 <Calendar className="me-1" color="white" size={16} />
-                <span>{posted_on}</span>
+                <span>{published}</span>
               </p>
               <p className="flex">
                 <Book className="me-1" color="white" size={16} />
