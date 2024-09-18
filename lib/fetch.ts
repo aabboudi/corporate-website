@@ -3,36 +3,66 @@
 import { desc } from "drizzle-orm";
 
 import { DB } from "@/drizzle/setup";
-import { Articles, FAQs } from "@/drizzle/schema";
+import { Articles, FAQs, Openings } from "@/drizzle/schema";
+import { ArticleType, FAQType, OpeningType } from "@/lib/models";
 
-export type FAQItem = {
-  question: string;
-  answer: string;
-  keywords: string[];
-};
+interface SitemapArticleType {
+  slug: string;
+  published: Date;
+}
 
-export async function get_all_articles() {
-  const articles: any = await DB.select({
+export async function sitemap_get_all_articles(): Promise<
+  SitemapArticleType[]
+> {
+  const articles: SitemapArticleType[] = await DB.select({
     slug: Articles.slug,
-    posted_on: Articles.posted_on,
+    published: Articles.published,
   }).from(Articles);
 
   return articles;
 }
 
-export async function get_all_faqs() {
-  let faqData = (await DB.select({
+// { title: string; slug: string; image: string | null; alt_text: string | null; category: string | null; published: Date; read_time: number | null; }[]
+
+export async function get_all_articles(): Promise<ArticleType[]> {
+  const articles: ArticleType[] = await DB.select({
+    id: Articles.id,
+    title: Articles.title,
+    slug: Articles.slug,
+    image: Articles.image,
+    alt_text: Articles.alt_text,
+    category: Articles.category,
+    location: Articles.location,
+    published: Articles.published,
+    content: Articles.content,
+    read_time: Articles.read_time,
+  })
+    .from(Articles)
+    .orderBy(desc(Articles.published));
+
+  return articles;
+}
+
+export async function get_all_openings(): Promise<OpeningType[]> {
+  const openings: OpeningType[] = await DB.select().from(Openings);
+
+  return openings;
+}
+
+export async function get_all_faqs(): Promise<FAQType[]> {
+  let faqData: FAQType[] = (await DB.select({
+    id: FAQs.id,
     question: FAQs.question,
     answer: FAQs.answer,
     keywords: FAQs.keywords,
   })
     .from(FAQs)
-    .orderBy(desc(FAQs.question))) as FAQItem[];
+    .orderBy(desc(FAQs.question))) as FAQType[];
 
-  faqData = faqData.map((faq) => ({
-    ...faq,
-    keywords: JSON.parse(faq.keywords.toString()),
-  }));
+  // faqData = faqData.map((faq) => ({
+  //   ...faq,
+  //   keywords: faq.keywords ? JSON.parse(faq.keywords.toString()) : [],
+  // }));
 
   return faqData;
 }
