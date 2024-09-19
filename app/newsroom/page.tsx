@@ -1,23 +1,10 @@
-// import Breadcrumbs from "@/components/Breadcrumbs";
-import { desc } from "drizzle-orm";
-
 import { Breadcrumbs } from "@/components/breadcrumbs-builder";
 import NewsCard from "@/components/NewsCard";
-import { DB } from "@/drizzle/setup";
-import { Articles } from "@/drizzle/schema";
+import { get_all_articles } from "@/lib/fetch";
+import { ArticleType } from "@/lib/models";
 
 export default async function Newsroom() {
-  const data: any = await DB.select({
-    title: Articles.title,
-    slug: Articles.slug,
-    image: Articles.image,
-    alt_text: Articles.alt_text,
-    category: Articles.category,
-    posted_on: Articles.posted_on,
-    read_time: Articles.read_time,
-  })
-    .from(Articles)
-    .orderBy(desc(Articles.posted_on));
+  const data: ArticleType[] = await get_all_articles();
 
   return (
     <main>
@@ -26,7 +13,7 @@ export default async function Newsroom() {
       <h1 className="text-3xl font-bold text-center">Newsroom</h1>
 
       <section className="grid gap-12 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center p-12 xl:px-24">
-        {data.map((article: any, index: number) => (
+        {data.map((article: ArticleType, index: number) => (
           <NewsCard
             key={index}
             bg={
@@ -35,7 +22,7 @@ export default async function Newsroom() {
             }
             category={article.category}
             index={index}
-            posted_on={new Date(article.posted_on).toDateString().slice(4)}
+            published={new Date(article.published).toDateString().slice(4)}
             read_time={`${article.read_time} min`}
             slug={`/newsroom/${article.slug}`}
             title={article.title}

@@ -1,46 +1,49 @@
-import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
+import {
+  mysqlTable,
+  serial,
+  varchar,
+  date,
+  tinyint,
+  text,
+  mysqlEnum,
+  boolean,
+  json,
+} from "drizzle-orm/mysql-core";
 
-type Year = `${number}${number}${number}${number}`;
-type Month = `0${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}` | `1${0 | 1 | 2}`;
-type Day =
-  | `0${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}`
-  | `${1 | 2}${number}`
-  | "30"
-  | "31";
-
-type DateString = `${Year}-${Month}-${Day}`;
-
-type StringArray = string[] & { __brand: "string_array" };
-
-export const Articles = sqliteTable("Articles", {
-  id: integer("ID").primaryKey(),
-  title: text("Title"),
-  slug: text("URL Slug"),
-  image: text("Image URL"),
-  alt_text: text("Credits"),
-  category: text("Category"),
-  location: text("Location"),
-  posted_on: text("Posted On").$type<DateString>(),
-  content: text("Content").$type<StringArray>(),
-  read_time: integer("Read Time (min)"),
+export const Articles = mysqlTable("Articles", {
+  id: serial("ID").primaryKey(),
+  title: varchar("Title", { length: 255 }).notNull(),
+  slug: varchar("Slug", { length: 255 }).notNull(),
+  image: varchar("Image URL", { length: 255 }),
+  alt_text: varchar("Credits", { length: 255 }),
+  category: varchar("Category", { length: 255 }),
+  location: varchar("Location", { length: 255 }),
+  published: date("Published On").default(new Date()).notNull(),
+  content: json("Content"),
+  read_time: tinyint("Read Time (min)"),
 });
 
-export const Jobs = sqliteTable("Jobs", {
-  id: integer("ID").primaryKey(),
-  job: text("Job"),
-  location: text("Location"),
-  type: text("Type"),
-  timezone: text("Timezone"),
-  published: text("Published").$type<DateString>(),
+export const Openings = mysqlTable("Openings", {
+  id: serial("ID").primaryKey(),
+  title: varchar("Title", { length: 255 }).notNull(),
+  location: varchar("Location", { length: 255 }),
+  type: mysqlEnum("Type", [
+    "Full-time",
+    "Part-time",
+    "Remote",
+    "Contract",
+    "Internship",
+  ]).notNull(),
+  timezone: mysqlEnum("Timezone", ["UTC", "EST", "PST"]),
+  published: date("Published On").default(new Date()).notNull(),
   description: text("Description"),
-  level: text("Level"),
-  clearance_required: integer("Clearance Required"),
-  is_urgent: integer("Is Urgent"),
+  clearance_required: boolean("Clearance Required").default(false).notNull(),
+  is_urgent: boolean("Is Urgent").default(false).notNull(),
 });
 
-export const FAQs = sqliteTable("FAQs", {
-  id: integer("ID").primaryKey(),
-  question: text("Question"),
-  answer: text("Answer"),
-  keywords: text("Keywords").$type<StringArray>(),
+export const FAQs = mysqlTable("FAQs", {
+  id: serial("ID").primaryKey(),
+  question: varchar("Question", { length: 255 }).notNull(),
+  answer: text("Answer").notNull(),
+  keywords: json("Keywords"),
 });

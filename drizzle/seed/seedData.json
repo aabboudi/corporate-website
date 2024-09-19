@@ -2,12 +2,11 @@
   "articles": [
     {
       "title": "The Power of Employee Engagement",
-      "slug": "the-power-of-employee-engagement",
       "image": "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Group of Person Sitting Indoors. Photo by fauxels from Pexels.",
       "category": "Employee Engagement",
       "location": "United States",
-      "posted_on": "2023-11-22",
+      "published": "2023-11-22",
       "content": [
         "Employee engagement is no longer a buzzword; it's a business imperative. When employees are truly invested in their work, it translates to increased productivity, improved customer satisfaction, and higher retention rates. Fostering a positive and engaging work environment requires a holistic approach.",
         "Leaders play a crucial role in cultivating employee engagement. By demonstrating genuine care for employees' well-being, providing clear expectations, and offering opportunities for growth, leaders can inspire a sense of purpose and belonging. Effective communication is also essential. Keeping employees informed about company goals, recognizing their contributions, and encouraging open dialogue creates a transparent and trust-based work culture.",
@@ -17,12 +16,11 @@
     },
     {
       "title": "The Future of Retail: E-commerce and Beyond",
-      "slug": "the-future-of-retail",
       "image": "https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Person Holding Bank Card. Photo by Anna Shvets from Pexels.",
       "category": "E-commerce Trends",
       "location": "United States",
-      "posted_on": "2023-11-23",
+      "published": "2023-11-23",
       "content": [
        "The retail industry is undergoing a profound transformation, driven by technological advancements and changing consumer behavior. E-commerce has disrupted traditional brick-and-mortar stores, forcing retailers to adapt or risk falling behind.",
        "To stay competitive, retailers must embrace a multi-channel approach that seamlessly integrates online and offline experiences. Offering convenient options like click-and-collect and buy online, pick up in-store can bridge the gap between digital and physical shopping. Furthermore, personalized experiences tailored to individual customer preferences are becoming increasingly important.",
@@ -32,12 +30,11 @@
     },
     {
       "title": "The Importance of Corporate Social Responsibility (CSR)",
-      "slug": "the-importance-of-corporate-social-responsibility",
       "image": "https://images.pexels.com/photos/6348129/pexels-photo-6348129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Smiling ethnic woman showing volunteer sign on red apron. Photo by Liza Summer from Pexels.",
       "category": "CSR",
       "location": "United States",
-      "posted_on": "2023-11-24",
+      "published": "2023-11-24",
       "content": [
       "Corporate Social Responsibility (CSR) is no longer a mere buzzword; it's a strategic imperative for businesses seeking long-term success. Consumers, investors, and employees increasingly expect companies to operate ethically and sustainably. By integrating social and environmental considerations into their business models, companies can build trust, enhance their reputation, and attract and retain top talent.",
       "CSR encompasses a wide range of initiatives, including environmental sustainability, ethical sourcing, community engagement, and employee well-being. Companies that prioritize CSR often demonstrate strong leadership, innovation, and a commitment to creating a positive impact on society.",
@@ -47,12 +44,11 @@
     },
     {
       "title": "The Power of Data Analytics in Business",
-      "slug": "the-power-of-data-analytics",
       "image": "https://images.pexels.com/photos/669612/pexels-photo-669612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Person Holding Chart And Bar Graph. Photo by Lukas from Pexels.",
       "category": "Data Analytics",
       "location": "United States",
-      "posted_on": "2023-11-25",
+      "published": "2023-11-25",
       "content": [
         "Data has become the lifeblood of modern businesses. With the increasing availability of data, organizations that can effectively harness its power gain a significant competitive advantage. Data analytics involves collecting, processing, and analyzing large datasets to extract valuable insights.",
         "By leveraging data analytics, businesses can make data-driven decisions, optimize operations, and identify new opportunities. For example, analyzing customer data can help companies understand customer preferences, personalize marketing campaigns, and improve customer satisfaction. Additionally, data analytics can be used to optimize supply chain management, reduce costs, and identify potential risks.",
@@ -62,12 +58,11 @@
     },
     {
       "title": "The Importance of Branding",
-      "slug": "the-importance-of-branding",
       "image": "https://images.pexels.com/photos/243757/pexels-photo-243757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Selective Focus Photography of Black Canon Camera Displaying Photo of Red and Black Building. Photo by Kaique Rocha from Pexels.",
       "category": "Branding",
       "location": "United States",
-      "posted_on": "2023-11-26",
+      "published": "2023-11-26",
       "content": [
         "Branding is more than just a logo or a slogan; it's the essence of a company's identity. A strong brand creates a lasting impression on customers, builds trust, and fosters loyalty. It's about creating a unique value proposition that resonates with the target audience.",
         "Consistent branding across all touchpoints is crucial. From website design to social media presence, every interaction should reinforce the brand's message and values. Additionally, storytelling is a powerful tool for building brand awareness and emotional connections with customers. By sharing compelling narratives about the company's mission and values, businesses can create a loyal customer base.",
@@ -76,12 +71,11 @@
     },
     {
       "title": "The Rise of Remote Work and Its Impact on Business",
-      "slug": "the-rise-of-remote-work",
       "image": "https://images.pexels.com/photos/1251862/pexels-photo-1251862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Man Using Gray Laptop While Sitting on Beige Sofa. Photo by LinkedIn Sales Navigator from Pexels.",
       "category": "Remote Work",
       "location": "United States",
-      "posted_on": "2023-11-27",
+      "published": "2023-11-27",
       "content":[
        "The COVID-19 pandemic accelerated the adoption of remote work, and it's a trend that's here to stay. Many companies have realized the benefits of a remote workforce, including increased productivity, cost savings, and access to a wider talent pool.",
       "However, remote work also presents challenges. Maintaining employee engagement, fostering collaboration, and ensuring work-life balance are key considerations. Effective communication tools and virtual team-building activities are essential for building a strong remote culture.",
@@ -91,12 +85,11 @@
     },
     {
       "title": "The Importance of Customer Experience",
-      "slug": "the-importance-of-customer-experience",
       "image": "https://images.pexels.com/photos/6956182/pexels-photo-6956182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": " A Top Shot of a Cup of Coffee on Brown Envelopes. Photo by Eva Bronzini from Pexels.",
       "category": "Customer Experience",
       "location": "United States",
-      "posted_on": "2023-11-28",
+      "published": "2023-11-28",
       "content": [
         "Customer experience (CX) is the cornerstone of business success. It encompasses every interaction a customer has with a company, from pre-purchase to post-purchase. Delivering exceptional customer experiences builds loyalty, drives customer advocacy, and ultimately boosts revenue.",
         "To excel in CX, businesses must understand customer needs and preferences. Gathering customer feedback through surveys, social media monitoring, and customer support interactions is essential. By analyzing this data, companies can identify areas for improvement and tailor their offerings accordingly.",
@@ -106,12 +99,11 @@
     },
     {
       "title": "The Power of Innovation",
-      "slug": "the-power-of-innovation",
       "image": "https://images.pexels.com/photos/1314410/pexels-photo-1314410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Person Holding Clear Light Bulb. Photo by lil artsy from Pexels.",
       "category": "Innovation",
       "location": "United States",
-      "posted_on": "2023-11-29",
+      "published": "2023-11-29",
       "content": [
       "Innovation is the lifeblood of business growth. It involves creating new products, services, or processes that deliver value to customers. By fostering a culture of innovation, companies can stay ahead of the competition, adapt to changing market conditions, and drive long-term success.",
       "To cultivate innovation, businesses should encourage experimentation, risk-taking, and failure. Providing employees with the resources and autonomy to explore new ideas is essential. Additionally, collaboration between different departments can lead to breakthrough innovations.",
@@ -120,12 +112,11 @@
     },
     {
       "title": "The Challenges and Opportunities of Globalization",
-      "slug": "the-challenges-and-opportunities-of-globalization",
       "image": "https://images.pexels.com/photos/3183174/pexels-photo-3183174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Photo Of Person Using Laptop. Photo by fauxels from Pexels.",
       "category": "Globalization",
       "location": "United States",
-      "posted_on": "2023-11-30",
+      "published": "2023-11-30",
       "content":[
        "Globalization has transformed the business landscape, creating both challenges and opportunities. Companies can now access new markets, tap into a global talent pool, and benefit from economies of scale. However, globalization also brings increased competition, cultural differences, and geopolitical risks.",
        "To succeed in a globalized world, businesses must develop a deep understanding of different cultures and markets. Building strong relationships with local partners can be crucial. Additionally, effective risk management is essential to mitigate potential challenges.",
@@ -134,12 +125,11 @@
     },
     {
       "title": "The Role of Financial Management",
-      "slug": "the-role-of-financial-management",
       "image": "https://images.pexels.com/photos/8296981/pexels-photo-8296981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "alt_text": "Person Holding Black Calculator While Using Laptop. Photo by Mikhail Nilov from Pexels.",
       "category": "Financial Management",
       "location": "United States",
-      "posted_on": "2023-12-01",
+      "published": "2023-12-01",
       "content": [
         "Sound financial management is essential for the long-term success of any business. It involves planning, organizing, directing, and controlling financial activities to achieve organizational goals. Effective financial management helps businesses make informed decisions, optimize resource allocation, and manage risk.",
         "Financial analysis, budgeting, and forecasting are critical components of financial management. By analyzing financial data, businesses can identify trends, measure performance, and make adjustments as needed. Additionally, effective cash flow management is crucial for ensuring the company's liquidity.",
@@ -148,12 +138,11 @@
     },
     {
       "title": "The Power of Human Capital",
-      "slug": "the-power-of-human-capital",
-      "image": "",
-      "alt_text": "",
+      "image": "https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "alt_text": "Man Standing In Front Of People. Photo by ICSA from Pexels.",
       "category": "Human Capital",
       "location": "United States",
-      "posted_on": "2023-12-02",
+      "published": "2023-12-02",
       "content": [
         "Human capital, the collective knowledge, skills, and abilities of an organization's employees, is a critical asset. Investing in employee development, training, and well-being is essential for driving business success. By creating a positive and supportive work environment, companies can attract and retain top talent, foster innovation, and enhance overall performance.",
         "Effective talent management strategies are crucial for maximizing the potential of human capital. This includes identifying high-potential employees, providing career development opportunities, and implementing performance management systems. Additionally, fostering a culture of learning and continuous improvement is essential for staying competitive."
@@ -161,12 +150,11 @@
     },
     {
       "title": "The Importance of Supply Chain Management",
-      "slug": "the-importance-of-supply-chain-management",
-      "image": "",
-      "alt_text": "",
+      "image": "https://images.pexels.com/photos/2226458/pexels-photo-2226458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "alt_text": "Birds-eye View Photo of Freight Containers. Photo by Tom Fisk from Pexels.",
       "category": "Supply Chain",
       "location": "United States",
-      "posted_on": "2023-12-03",
+      "published": "2023-12-03",
       "content":[
        "Supply chain management encompasses the coordination of all activities involved in procuring materials, transforming them into finished products, and delivering them to customers. Efficient supply chain management is vital for reducing costs, improving customer satisfaction, and mitigating risks.",
        "Building strong relationships with suppliers is essential for a robust supply chain. Collaboration, transparency, and trust are key factors in successful partnerships. Additionally, implementing advanced technologies such as supply chain visibility and demand forecasting can optimize operations and improve responsiveness.",
@@ -233,7 +221,7 @@
       "location": "New York",
       "description": "We are looking for a skilled Frontend Developer to join our team.",
       "company": "TechCorp",
-      "postedDate": "2023-05-15",
+      "published": "2023-05-15",
       "salary": "$80,000 - $120,000"
     },
     {
@@ -242,7 +230,7 @@
       "location": "San Francisco",
       "description": "Seeking an experienced Backend Engineer to build scalable systems.",
       "company": "DataSystems Inc.",
-      "postedDate": "2023-05-14",
+      "published": "2023-05-14",
       "salary": "$90,000 - $140,000"
     },
     {
@@ -251,7 +239,7 @@
       "location": "Remote",
       "description": "Join our design team to create intuitive user experiences.",
       "company": "DesignHub",
-      "postedDate": "2023-05-13",
+      "published": "2023-05-13",
       "salary": "$60,000 - $80,000"
     },
     {
@@ -260,7 +248,7 @@
       "location": "London",
       "description": "Help us streamline our development and deployment processes.",
       "company": "CloudOps Ltd.",
-      "postedDate": "2023-05-12",
+      "published": "2023-05-12",
       "salary": "£500 - £700 per day"
     },
     {
@@ -269,7 +257,7 @@
       "location": "Berlin",
       "description": "Analyze complex data sets and drive insights for our products.",
       "company": "AI Innovations GmbH",
-      "postedDate": "2023-05-11",
+      "published": "2023-05-11",
       "salary": "€70,000 - €110,000"
     }
   ]
