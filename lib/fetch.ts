@@ -1,15 +1,10 @@
 "use server";
 
 import { desc } from "drizzle-orm";
-
 import { DB } from "@/drizzle/setup";
 import { Articles, FAQs, Openings } from "@/drizzle/schema";
 import { ArticleType, FAQType, OpeningType } from "@/lib/models";
-
-interface SitemapArticleType {
-  slug: string;
-  published: Date;
-}
+import { SitemapArticleType } from "./@types/sitemap";
 
 export async function sitemap_get_all_articles(): Promise<
   SitemapArticleType[]
@@ -21,8 +16,6 @@ export async function sitemap_get_all_articles(): Promise<
 
   return articles;
 }
-
-// { title: string; slug: string; image: string | null; alt_text: string | null; category: string | null; published: Date; read_time: number | null; }[]
 
 export async function get_all_articles(): Promise<ArticleType[]> {
   const articles: ArticleType[] = await DB.select({
@@ -58,11 +51,6 @@ export async function get_all_faqs(): Promise<FAQType[]> {
   })
     .from(FAQs)
     .orderBy(desc(FAQs.question))) as FAQType[];
-
-  // faqData = faqData.map((faq) => ({
-  //   ...faq,
-  //   keywords: faq.keywords ? JSON.parse(faq.keywords.toString()) : [],
-  // }));
 
   return faqData;
 }
