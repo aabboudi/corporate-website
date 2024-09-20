@@ -1,4 +1,6 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Link from "next/link";
+
+import { Phone, Mail, MessagesSquare, MoveRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +19,7 @@ export default function Contact() {
   return (
     <>
       <Breadcrumbs current="Contact" path={[{ href: "/", label: "Home" }]} />
-      <main className="container max-w-8xl px-8 mx-auto">
+      <main className="container max-w-7xl px-8 mx-auto">
         <h1 className="text-center text-3xl font-bold mb-8">Get in Touch</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <Card className="col-span-1 w-full">
@@ -82,10 +84,6 @@ export default function Contact() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span>123 Main Street, New York City, NY 12345</span>
-              </div>
-              <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-primary" />
                 <span>+1 (555) 123-4567</span>
               </div>
@@ -94,8 +92,8 @@ export default function Contact() {
                 <span>contact@example.com</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Clock className="h-5 w-5 text-primary" />
-                <span>Monday - Friday: 9am - 5pm</span>
+                <MessagesSquare className="h-5 w-5 text-primary" />
+                <span>Check our <Link className="font-semibold inline-flex animated-underline" href="/frequently-asked-questions">Frequently Asked Questions&nbsp;<MoveRight /></Link></span>
               </div>
             </div>
             <div className="pt-6">
