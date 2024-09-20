@@ -48,7 +48,7 @@ export default function Navbar() {
                     <NavigationMenuItem key={index}>
                       <NavigationMenuLink
                         asChild
-                        className="font-medium relative inline-block text-gray-800 dark:text-white after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:scale-x-0 after:bg-black dark:after:bg-white after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"
+                        className="font-medium inline-block text-gray-800 dark:text-white animated-underline"
                       >
                         <Link href={item.href}>{item.label}</Link>
                       </NavigationMenuLink>

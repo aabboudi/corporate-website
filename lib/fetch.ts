@@ -6,19 +6,15 @@ import { Articles, FAQs, Openings } from "@/drizzle/schema";
 import { ArticleType, FAQType, OpeningType } from "@/lib/models";
 import { SitemapArticleType } from "./@types/sitemap";
 
-export async function sitemap_get_all_articles(): Promise<
-  SitemapArticleType[]
-> {
-  const articles: SitemapArticleType[] = await DB.select({
+export async function sitemap_get_all_articles(): Promise<SitemapArticleType[]> {
+  return await DB.select({
     slug: Articles.slug,
     published: Articles.published,
   }).from(Articles);
-
-  return articles;
 }
 
 export async function get_all_articles(): Promise<ArticleType[]> {
-  const articles: ArticleType[] = await DB.select({
+  return await DB.select({
     id: Articles.id,
     title: Articles.title,
     slug: Articles.slug,
@@ -32,18 +28,20 @@ export async function get_all_articles(): Promise<ArticleType[]> {
   })
     .from(Articles)
     .orderBy(desc(Articles.published));
-
-  return articles;
 }
 
 export async function get_all_openings(): Promise<OpeningType[]> {
-  const openings: OpeningType[] = await DB.select().from(Openings);
+  const openingsFromDB = await DB.select().from(Openings);
 
-  return openings;
+  return openingsFromDB.map(opening => ({
+    ...opening,
+    salary_min: +opening.salary_min,
+    salary_max: +opening.salary_max,
+  }));
 }
 
 export async function get_all_faqs(): Promise<FAQType[]> {
-  let faqData: FAQType[] = (await DB.select({
+  return (await DB.select({
     id: FAQs.id,
     question: FAQs.question,
     answer: FAQs.answer,
@@ -51,6 +49,4 @@ export async function get_all_faqs(): Promise<FAQType[]> {
   })
     .from(FAQs)
     .orderBy(desc(FAQs.question))) as FAQType[];
-
-  return faqData;
 }

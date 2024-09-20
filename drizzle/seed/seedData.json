@@ -217,48 +217,78 @@
   "openings": [
     {
       "title": "Frontend Developer",
-      "type": "Full-time",
+      "department": "Engineering",
       "location": "New York",
-      "description": "We are looking for a skilled Frontend Developer to join our team.",
-      "company": "TechCorp",
+      "option": "Full-time",
+      "timezone": "EST",
       "published": "2023-05-15",
-      "salary": "$80,000 - $120,000"
+      "description": "We are looking for a skilled Frontend Developer to join our team.",
+      "clearance_required": false,
+      "is_urgent": false,
+      "salary_min": 80000,
+      "salary_max": 120000,
+      "salary_cur": "USD",
+      "salary_frq": "year"
     },
     {
       "title": "Backend Engineer",
-      "type": "Full-time",
+      "department": "Engineering",
       "location": "San Francisco",
-      "description": "Seeking an experienced Backend Engineer to build scalable systems.",
-      "company": "DataSystems Inc.",
+      "option": "Full-time",
+      "timezone": "EST",
       "published": "2023-05-14",
-      "salary": "$90,000 - $140,000"
+      "description": "Seeking an experienced Backend Engineer to build scalable systems.",
+      "clearance_required": true,
+      "is_urgent": true,
+      "salary_min": 90000,
+      "salary_max": 140000,
+      "salary_cur": "USD",
+      "salary_frq": "year"
     },
     {
       "title": "UX Designer",
-      "type": "Part-time",
+      "department": "Marketing",
       "location": "Remote",
-      "description": "Join our design team to create intuitive user experiences.",
-      "company": "DesignHub",
+      "option": "Part-time",
+      "timezone": "EST",
       "published": "2023-05-13",
-      "salary": "$60,000 - $80,000"
+      "description": "Join our design team to create intuitive user experiences.",
+      "clearance_required": false,
+      "is_urgent": false,
+      "salary_min": 60000,
+      "salary_max": 80000,
+      "salary_cur": "USD",
+      "salary_frq": "year"
     },
     {
       "title": "DevOps Specialist",
-      "type": "Contract",
+      "department": "Engineering",
       "location": "London",
-      "description": "Help us streamline our development and deployment processes.",
-      "company": "CloudOps Ltd.",
+      "option": "Contract",
+      "timezone": "EST",
       "published": "2023-05-12",
-      "salary": "£500 - £700 per day"
+      "description": "Help us streamline our development and deployment processes.",
+      "clearance_required": true,
+      "is_urgent": true,
+      "salary_min": 500,
+      "salary_max": 700,
+      "salary_cur": "GBP",
+      "salary_frq": "day"
     },
     {
       "title": "Data Scientist",
-      "type": "Full-time",
+      "department": "Engineering",
       "location": "Berlin",
-      "description": "Analyze complex data sets and drive insights for our products.",
-      "company": "AI Innovations GmbH",
+      "option": "Full-time",
+      "timezone": "EST",
       "published": "2023-05-11",
-      "salary": "€70,000 - €110,000"
+      "description": "Analyze complex data sets and drive insights for our products.",
+      "clearance_required": true,
+      "is_urgent": true,
+      "salary_min": 70000,
+      "salary_max": 110000,
+      "salary_cur": "EUR",
+      "salary_frq": "year"
     }
   ]
 }

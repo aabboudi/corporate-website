@@ -6,16 +6,9 @@ import { Search, MapPin, Briefcase, Calendar, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { MultiSelect } from "@/components/ui/multiselect";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
@@ -23,65 +16,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const jobTypes = ["Full-time", "Part-time", "Contract"];
-const locations = ["New York", "San Francisco", "Remote", "London", "Berlin"];
-
-/**
- * 
-type Job = {
-  id: string;
-  title: string;
-  company: string;
-  location: string;
-  postedDate: string;
-  type: string;
-  description: string;
-  salary: string;
-};
- * 
- */
-
-type MultiSelectProps = {
-  options: string[];
-  selected: string[];
-  onChange: (selected: string[]) => void;
-  placeholder: string;
-};
-
-const MultiSelect = ({
-  options,
-  selected,
-  onChange,
-  placeholder,
-}: MultiSelectProps) => {
-  return (
-    <Select
-      onValueChange={(value) => {
-        if (selected.includes(value)) {
-          onChange(selected.filter((item) => item !== value));
-        } else {
-          onChange([...selected, value]);
-        }
-      }}
-    >
-      <SelectTrigger>
-        <SelectValue placeholder={placeholder}>
-          {selected.length > 0 ? `${selected.length} selected` : placeholder}
-        </SelectValue>
-      </SelectTrigger>
-      <SelectContent>
-        {options.map((option) => (
-          <SelectItem key={option} value={option}>
-            <div className="flex items-center space-x-2">
-              <Checkbox checked={selected.includes(option)} />
-              <span>{option}</span>
-            </div>
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  );
-};
+import { opening_enums } from "@/drizzle/schema";
 
 export default function OpeningsClient({
   allOpenings,
@@ -90,7 +25,7 @@ export default function OpeningsClient({
 }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [typeFilters, setTypeFilters] = useState<string[]>([]);
-  const [locationFilters, setLocationFilters] = useState<string[]>([]);
+  const [departmentFilters, setDepartmentFilters] = useState<string[]>([]);
   const [selectedJob, setSelectedJob] = useState(allOpenings[0]);
   // const [selectedJob, setSelectedJob] = useState<Job | null>(jobOpenings[0] || null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -110,8 +45,8 @@ export default function OpeningsClient({
   const filteredJobs = allOpenings.filter(
     (job) =>
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (typeFilters.length === 0 || typeFilters.includes(job.type)) &&
-      (locationFilters.length === 0 || locationFilters.includes(job.location)),
+      (typeFilters.length === 0 || typeFilters.includes(job.option)) &&
+      (departmentFilters.length === 0 || departmentFilters.includes(job.location)),
   );
 
   const handleJobSelect = (job: typeof selectedJob) => {
@@ -126,7 +61,7 @@ export default function OpeningsClient({
       <h2 className="text-2xl font-bold mb-4">{job.title}</h2>
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
         <Briefcase size={14} />
-        <span>{job.company}</span>
+        <span>{job.department}</span>
       </div>
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
         <MapPin size={14} />
@@ -134,10 +69,10 @@ export default function OpeningsClient({
       </div>
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
         <Calendar size={14} />
-        <span>Posted on {job.postedDate}</span>
+        <span>Posted on {job.published.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
       </div>
       <Badge className="mb-4" variant="secondary">
-        {job.type}
+        {job.option}
       </Badge>
       <p className="text-gray-600 mb-4">{job.description}</p>
       <div className="mb-6">
@@ -163,22 +98,22 @@ export default function OpeningsClient({
           />
         </div>
         <MultiSelect
-          options={jobTypes}
-          placeholder="Job Type"
+          options={[...opening_enums.options]}
+          placeholder="Job Option"
           selected={typeFilters}
           onChange={setTypeFilters}
         />
         <MultiSelect
-          options={locations}
-          placeholder="Location"
-          selected={locationFilters}
-          onChange={setLocationFilters}
+          options={[...opening_enums.departments]}
+          placeholder="Department"
+          selected={departmentFilters}
+          onChange={setDepartmentFilters}
         />
         <Button
           onClick={() => {
             setSearchTerm("");
             setTypeFilters([]);
-            setLocationFilters([]);
+            setDepartmentFilters([]);
           }}
         >
           Clear Filters
@@ -198,14 +133,14 @@ export default function OpeningsClient({
             />
           </Badge>
         ))}
-        {locationFilters.map((filter) => (
+        {departmentFilters.map((filter) => (
           <Badge key={filter} className="px-2 py-1" variant="secondary">
             {filter}
             <X
               className="ml-1 cursor-pointer"
               size={14}
               onClick={() =>
-                setLocationFilters(locationFilters.filter((l) => l !== filter))
+                setDepartmentFilters(departmentFilters.filter((l) => l !== filter))
               }
             />
           </Badge>
@@ -224,13 +159,13 @@ export default function OpeningsClient({
                 <h3 className="text-lg font-semibold mb-2">{job.title}</h3>
                 <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                   <Briefcase size={14} />
-                  <span>{job.company}</span>
+                  <span>{job.department}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
                   <MapPin size={14} />
                   <span>{job.location}</span>
                 </div>
-                <Badge variant="secondary">{job.type}</Badge>
+                <Badge variant="secondary">{job.option}</Badge>
               </CardContent>
             </Card>
           ))}

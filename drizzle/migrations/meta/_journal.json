@@ -15,6 +15,13 @@
       "when": 1726676009244,
       "tag": "0001_sudden_jack_murdock",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1726788239943,
+      "tag": "0002_boring_zuras",
+      "breakpoints": true
     }
   ]
 }
