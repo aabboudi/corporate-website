@@ -3,7 +3,6 @@ import { opening_enums } from "@/drizzle/schema";
 export interface ArticleType {
   id: number;
   title: string;
-  department: string;
   slug: string;
   image: string | null;
   alt_text: string | null;
