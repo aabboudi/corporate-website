@@ -28,3 +28,11 @@ export function slugify(text: string): string {
     .replace(/^-+/, "")
     .replace(/-+$/, "");
 }
+
+export function calculateReadTime(text: string): number {
+  const WORDS_PER_MINUTE = 200;
+  const cleanedText = text.replace(/\n/g, " ");
+  const wordCount = cleanedText.trim().split(/\s+/).length;
+
+  return Math.ceil(wordCount / WORDS_PER_MINUTE);
+}

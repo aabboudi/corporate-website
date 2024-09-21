@@ -13,6 +13,7 @@
     "studio": "npx drizzle-kit studio --config drizzle.config.ts"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.19.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
@@ -35,6 +36,7 @@
     "mysql2": "^3.11.3",
     "next": "14.2.4",
     "next-themes": "^0.3.0",
+    "pexels": "^1.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2",
