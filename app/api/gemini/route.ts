@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { DB } from "@/drizzle/setup";
 import { GenerateArticle, GenerateOpening } from "@/server/gemini";
 import { Articles, Openings } from "@/drizzle/schema";
-import { ReportStatus } from "@/server/send-email";
+import { ReportStatus } from "@/server/report-status";
 
 export const runtime = 'nodejs';
 
