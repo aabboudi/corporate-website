@@ -1,4 +1,4 @@
-import { slugify } from "@/lib/utils";
+import { calculateReadTime, slugify } from "@/lib/utils";
 
 const fs = require("fs").promises;
 
@@ -50,14 +50,6 @@ async function seedDatabase() {
     console.log("Exiting with status code: 0");
     process.exit(0);
   }
-}
-
-function calculateReadTime(text: string): number {
-  const WORDS_PER_MINUTE = 200;
-  const cleanedText = text.replace(/\n/g, " ");
-  const wordCount = cleanedText.trim().split(/\s+/).length;
-
-  return Math.ceil(wordCount / WORDS_PER_MINUTE);
 }
 
 seedDatabase();

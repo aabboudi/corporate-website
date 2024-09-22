@@ -1,7 +1,7 @@
 import { opening_enums } from "@/drizzle/schema";
 
 export interface ArticleType {
-  id: number;
+  id?: number;
   title: string;
   slug: string;
   image: string | null;
@@ -21,7 +21,7 @@ type EnumCurrency = typeof opening_enums.currencies[number];
 type EnumSalaryFrq = typeof opening_enums.salary_frq[number];
 
 export interface OpeningType {
-  id: number;
+  id?: number;
   title: string;
   department: EnumDepartment;
   location: string | null;
