@@ -21,15 +21,14 @@ To use this project as a base for your own, run the following command:
 ### Clone the repository and install the dependencies
 
 ```bash
-git clone https://github.com/aabboudi/nextjs-drizzle-sqlite-website.git
-cd ./nextjs-drizzle-sqlite-website/
+git clone https://github.com/aabboudi/nextjs-drizzle-mysql-website.git
+cd ./nextjs-drizzle-mysql-website/
 npm install
 ```
 
 ### Apply migrations then seed the database
 
 ```bash
-npm run makemigrations
 npm run migrate
 npm run seed
 ```
@@ -48,4 +47,4 @@ npm run studio
 
 ## License
 
-Licensed under the [MIT license](https://github.com/aabboudi/nextjs-sqlite3-corporate-website/blob/master/LICENSE).
+Licensed under the [MIT license](https://github.com/aabboudi/nextjs-drizzle-mysql-website/blob/master/LICENSE).
