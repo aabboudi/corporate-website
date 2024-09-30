@@ -1,3 +1,4 @@
+import { ArticleType } from "@/lib/models";
 import { calculateReadTime, slugify } from "@/lib/utils";
 
 const fs = require("fs").promises;
@@ -31,7 +32,7 @@ async function seedDatabase() {
 
     // Prepare
     await Promise.all(
-      articlesData.map(async (article: any) => {
+      articlesData.map(async (article: ArticleType) => {
         article.slug = slugify(article.title);
         article.read_time = calculateReadTime(JSON.stringify(article.content));
       }),

@@ -42,7 +42,7 @@ export default async function NewsArticle({
           </div>
           <hr className="border-gray-800 dark:border-white my-4" />
           <div className="text-justify">
-            {JSON.parse(article.content).map(
+            {article.content.map(
               (paragraph: string, index: number) => (
                 <p key={index} className="mb-4">
                   {paragraph}
